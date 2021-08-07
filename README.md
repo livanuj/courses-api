@@ -1,24 +1,39 @@
-# README
+Technologies
+- ruby 3.0.1
+- Rails 6.1.4
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+For local setup:
 
-Things you may want to cover:
+Clone the repository with:
 
-* Ruby version
+git clone git@github.com:livanuj/courses-api.git
 
-* System dependencies
+make sure postgres is installed
 
-* Configuration
+Inside main folder:
 
-* Database creation
+- rails db:create --- to create database
+- rails db:migrate --- to migrate database
+- rails db:seed --- to seed default data
+- rails s --- to start server at port 3000
 
-* Database initialization
 
-* How to run the test suite
+Deployed at heroku:
 
-* Services (job queues, cache servers, search engines, etc.)
+BASE_URL = http://courses-api-anuj.herokuapp.com
 
-* Deployment instructions
+OR
 
-* ...
+BASE_URL = http://localhost:3000
+
+Endpoints:
+
+- Index             -> GET ${BASE_URL}/api/v1/courses
+- Index with filter -> GET ${BASE_URL}/api/v1/courses?filter[self-assignable]=true
+- Show              -> GET ${BASE_URL}/api/v1/courses/:id
+- Create            -> POST ${BASE_URL}/api/v1/courses
+                     -d '{"data": {"type":"courses", "attributes":{"name":"Ruby on Rails Course", "self-assignable": true}, "relationships":{"coach": {"data":                                {"type": "coaches", "id": 1}}}}}'
+
+
+
+
