@@ -33,6 +33,7 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # rspec test
   gem 'rspec-rails', '~> 5.0.0'
+  gem 'pry'
 end
 
 group :development do
@@ -46,6 +47,7 @@ group :test do
   gem 'factory_bot_rails', '~> 6.1'
   gem 'faker'
   gem 'shoulda-matchers', '~> 4.5', '>= 4.5.1'
+  gem 'shoulda-callback-matchers', '~> 1.1.1'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

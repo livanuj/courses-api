@@ -4,4 +4,8 @@ class Course < ApplicationRecord
 
   validates :coach, presence: true
   validates :name, presence: true
+
+  scope :self_assignable_courses, -> {
+    where(self_assignable: true)
+  }
 end
