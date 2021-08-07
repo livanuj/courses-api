@@ -17,14 +17,14 @@ RSpec.describe "Courses", type: :request do
       end
     end
 
-    # Test suite for filter by self_assignable GET /courses?filter[self_assignable]=true
+    # Test suite for filter by self_assignable GET /courses?filter[self-assignable]=true
     context "GET /courses with filter" do
       let(:self_assignable_count) { Course.self_assignable_courses.count }
-      before { get '/api/v1/courses?filter[self_assignable]=true' }
+      before { get '/api/v1/courses?filter[self-assignable]=true' }
 
       it 'get courses with filter self_assignable true' do
         expect(json['data'].size).to eq(self_assignable_count)
-        expect(json['data'].pluck('attributes').pluck('self_assignable').all?).to be(true)
+        expect(json['data'].pluck('attributes').pluck('self-assignable').all?).to be(true)
       end
     end
 
@@ -60,7 +60,7 @@ RSpec.describe "Courses", type: :request do
             type: 'courses',
             attributes: {
               name: course_name,
-              "self_assignable": true,
+              "self-assignable": true,
             },
             relationships: {
               coach: {
