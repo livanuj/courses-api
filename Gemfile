@@ -21,6 +21,8 @@ gem 'puma', '~> 5.0'
 
 # api
 gem 'jsonapi-resources'
+gem 'factory_bot_rails', '~> 6.1'
+  gem 'faker'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
@@ -44,8 +46,6 @@ end
 
 group :test do
   gem 'database_cleaner'
-  gem 'factory_bot_rails', '~> 6.1'
-  gem 'faker'
   gem 'shoulda-matchers', '~> 4.5', '>= 4.5.1'
   gem 'shoulda-callback-matchers', '~> 1.1.1'
 end
